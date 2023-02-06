@@ -1,16 +1,45 @@
-const container = document.querySelector('#container');
+const btn = document.getElementById('btn');
 
-function createGrid(input) {
-  for (let i = 0; i < input; i++) {
-    const row = container.appendChild(document.createElement('div'));
-    for (let j = 0; j < input; j++) {
-      const box = document.createElement('div');
-      box.className = 'box';
-      row.appendChild(box);
-    } 
-  }
+btn.addEventListener('click',userInput);
+
+function userInput() {
+    let input = prompt('Enter your grid size', "0");
+    let num = parseInt(input);
+    createGrid(num);
 }
 
-createGrid(8);
+const container = document.querySelector('#container');
+
+function createGrid(num) {
+    for (let i = 0; i < num; i++) {
+        const row = container.appendChild(document.createElement('div'));
+    for (let j = 0; j < num; j++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        row.appendChild(box);
+        } 
+    }
+    fill();
+}
+
+function fill() {
+    const boxes = document.querySelectorAll('.box'); 
+
+    boxes.forEach(box => 
+        box.addEventListener('click', color));
+
+    function color() {
+        let color1 = Math.floor(Math.random() * 256);
+        let color2 = Math.floor(Math.random() * 256);
+        let color3 = Math.floor(Math.random() * 256);
+        this.style.backgroundColor = `rgb(${color1},${color2},${color3})`;
+    }
+}
+
+
+
+
+
+
 
 

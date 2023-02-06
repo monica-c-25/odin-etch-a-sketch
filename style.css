@@ -1,3 +1,5 @@
+
+
 .box {
     border: 1px solid black;
     box-sizing: border-box;
@@ -14,4 +16,9 @@
   #container>div {
     height: 25px;
   }
+  
+  .my-color-class {
+    background: blue;
+  }
+  
   
