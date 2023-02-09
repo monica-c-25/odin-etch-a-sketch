@@ -1,24 +1,33 @@
 
-
-.box {
+/*.box {
     border: 1px solid black;
     box-sizing: border-box;
-    display: inline-block;
+    display: inline-flex;
     width: 25px;
     height: 25px;
   }
-  
+  */
+
   #container {
+    display:flex;
     width: 500px;
     height: 500px;
+    flex-grow: 1;
   }
   
-  #container>div {
-    height: 25px;
+  .boxContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
+
+  .box {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
   
-  .my-color-class {
-    background: blue;
-  }
-  
+ 
+
   
