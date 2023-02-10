@@ -98,14 +98,13 @@ function fill() {
     }
 }
 
-
-
 const reset = document.getElementById('reset');
 
-reset.addEventListener('click', newBoard);
+reset.addEventListener('click', clearBoard);
 
-function newBoard() {
-    location.reload();
+function clearBoard() {
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div) => div.style.backgroundColor= "white")
 }
 
 
